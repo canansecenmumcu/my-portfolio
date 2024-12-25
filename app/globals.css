@@ -2,20 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.page {
+  @apply w-screen h-screen overflow-hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer utilities {
+  .clip-path-custom {
+    clip-path: path(
+      "M40.1,-57.3C51.7,-46.4,58.3,-31.5,61.2,-16.8C64.1,-2.2,63.2,11.1,58.1,21.5C53,31.9,43.7,39.4,33.5,48.2C23.3,56.9,11.7,66.9,-2.2,69.7C-16.1,72.5,-32.2,68.1,-45.1,59.1C-58.1,50,-67.9,36.2,-73.1,20.8C-78.3,5.5,-78.9,-11.4,-71.6,-23.3C-64.2,-35.3,-48.8,-42.3,-34.4,-52.8C-20,-63.4,-10,-77.5,2.8,-81.3C15.5,-85.1,31,-78.6,40.1,-57.3Z"
+    );
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Tailwind sınıflarını kullanarak temalar arası değişim */
+.bg-white.dark\:bg-gray-900 {
+  transition: background-color 0.5s;
+}
+.text-black.dark\:text-white {
+  transition: color 0.5s;
 }
