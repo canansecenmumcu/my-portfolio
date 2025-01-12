@@ -3,6 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
+import {
+  FaDribbble,
+  FaGithub,
+  FaLinkedinIn,
+  FaInstagram,
+  FaLocationArrow,
+} from "react-icons/fa";
 
 const navLinks = [
   { title: "Home", path: "/" },
@@ -22,23 +29,52 @@ const Navbar = () => {
   };
 
   return (
-    <div className="flex justify-between text-black">
-      <div>
+    <div className="flex flex-row items-center justify-between h-24 ">
+      {/* Logo */}
+      <div className="hidden md:flex">
         <Logo />
       </div>
-      <div className="md:hidden ">
+      {/* Desktop Navlinks */}
+      <div className="hidden md:flex items-center justify-center gap-5 text-red-200 ">
+        {navLinks.map((link) => (
+          <Link
+            href={link.path}
+            key={link.title}
+            className="text-xl hover:bg-gradient-to-r hover:from-gray-400 hover:to-red-300 transition-all duration-500 hover:text-white p-2 rounded-md  "
+          >
+            {link.title}
+          </Link>
+        ))}
+      </div>
+      {/* Icons */}
+      <div className="flex space-x-3 md:hidden">
+        <Link href=" https://dribbble.com/canansecenmumcu">
+          <FaGithub size={30} />
+        </Link>
+        <Link href=" https://dribbble.com/canansecenmumcu">
+          <FaDribbble size={30} />
+        </Link>
+
+        <Link href=" https://dribbble.com/canansecenmumcu">
+          <FaLinkedinIn size={30} />
+        </Link>
+        <Link href=" https://dribbble.com/canansecenmumcu">
+          <FaInstagram size={30} />
+        </Link>
+      </div>
         {/* Menu button */}
+      <div className="flex md:hidden ">
         <div
           className="w-10 h-8  flex flex-col justify-between items-center z-50 relative cursor-pointer"
           onClick={handleClick}
         >
-          <div className="w-10 h-1 bg-black rounded-full cursor-pointer "></div>
-          <div className="w-10 h-1 bg-black rounded-full cursor-pointer "></div>
-          <div className="w-10 h-1 bg-black rounded-full cursor-pointer "></div>
+          <div className="w-10 h-1 bg-white rounded-full cursor-pointer "></div>
+          <div className="w-10 h-1 bg-white rounded-full cursor-pointer "></div>
+          <div className="w-10 h-1 bg-white rounded-full cursor-pointer "></div>
         </div>
         {/* Mobile Navlinks */}
         {isOpen && (
-          <div className="absolute top-0 right-0 w-1/2 h-screen items-center justify-center flex flex-col bg-opacity-15 bg-black gap-8 text-4xl z-40 ">
+          <div className="absolute top-0 right-0 w-1/2 h-screen items-center justify-center flex flex-col bg-opacity-15  gap-8 text-4xl z-40 ">
             {navLinks.map((link) => (
               <Link
                 onClick={closeMenu}
@@ -51,17 +87,6 @@ const Navbar = () => {
             ))}
           </div>
         )}
-      </div>
-      {/* Desktop Navlinks */}
-      <div className="hidden md:flex items-center justify-center gap-5  ">
-        {navLinks.map((link) => (
-          <Link href={link.title} 
-          key={link.title}
-          className="text-xl hover:bg-gradient-to-r hover:from-gray-400 hover:to-red-300 transition-all duration-500 hover:text-white p-2 rounded-md  "
-          >
-            {link.title}
-          </Link>
-        ))}
       </div>
     </div>
   );
