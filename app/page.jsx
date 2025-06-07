@@ -48,7 +48,7 @@ export default function Home() {
             </div>
           </div>
           {/* Image Container  */}
-          <div className="h-1/2 flex items-center justify-center rounded-lg md:mt-44">
+          <div className="h-1/2 flex items-center justify-center rounded-lg md:mt-[7rem]">
             <ProfileFrame />
           </div>
         </div>

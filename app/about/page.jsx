@@ -1,18 +1,18 @@
 import Image from "next/image";
 import { Roboto } from "next/font/google";
-import { Inter } from 'next/font/google';
-import { Poppins } from 'next/font/google';
+import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 
 const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
-  display: 'swap',
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
 });
 
 const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 const roboto = Roboto({
@@ -39,18 +39,14 @@ const AboutPage = () => {
         </div>
 
         {/* Text Container */}
-        <div className="flex-1 bg-gray-800 p-8 xl:p-10 rounded-lg shadow-md text-white space-y-10  ">
-          <h1
-            className="text-red-300 text-5xl font-extrabold tracking-wide uppercase border-b-4 border-red-300 hover:border-yellow-500 pb-2 hover:text-yellow-500 transition-colors duration-300 shadow-lg md:pt-20 "
-          >
-            about
-          </h1>
-          <p
-            className="text-lg leading-relaxed text-gray-300 px-10 "
-          >
+        <div className="flex-1 px-4 text-white space-y-10  ">
+          <h1 className="text-8xl font-extrabold tracking-wide  ">about.</h1>
+          <p className="text-lg leading-relaxed text-gray-300 ">
             I am a web developer living in Ankara, the capital city of Turkey.
           </p>
-          <p className={`${poppins.className} text-base leading-relaxed text-gray-300 px-10 `}>
+          <p
+            className={`${poppins.className} text-base leading-relaxed text-gray-300 `}
+          >
             I've been developing attractive and easy-to-use websites that are
             compatible with all devices since 2022. When I'm not coding, I enjoy
             doing my mothering duties, designing my home, taking care of my

@@ -2,6 +2,12 @@
 
 import { useState } from "react";
 import emailjs from "emailjs-com";
+import { Inter } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["200", "300"], // İnce ağırlıklar
+});
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -35,38 +41,30 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white shadow-md rounded">
-      <h1 className="text-2xl font-bold text-gray-800 mb-4">
-        Send me an email
-      </h1>
-      {status && <p className="text-sm text-green-600 mb-4">{status}</p>}
+    <div
+      className={`${inter.className} max-w-lg mx-auto p-24 bg-red-50 shadow-md rounded-2xl `}
+    >
+      {status && <p className=" text-green-600 mb-4">{status}</p>}
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Name area */}
         <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-medium text-gray-600"
-          >
-            Name
-          </label>
-          <input
+          <span className="block text-black mb-6 font-bold">Hello Canan,</span>
+          <textarea
             type="text"
             name="name"
             id="name"
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400 "
+            rows={4}
+            className="w-full text-black bg-transparent border-b-2 border-b-gray-400 outline-none resize-none "
           />
         </div>
         {/* EMmailArea */}
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-600"
-          >
-            Email
-          </label>
+          <span className="block text-black mb-4 font-bold">
+            My mail address is:
+          </span>
           <input
             type="email"
             id="email"
@@ -74,32 +72,19 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="w-full text-black bg-transparent border-b-2 border-b-gray-400 outline-none resize-none mb-6"
           />
         </div>
-        {/* Message Area */}
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-600">
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            className="w-full px-4 py-2 border rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-400"
-          ></textarea>
+
+        {/* Send Button */}
+        <div className="w-full">
+          <button
+            type="submit"
+            className="w-full bg-red-300 hover:bg-blue-200 text-wtite font-bold py-2 px-4 rounded focus:outline-none"
+          >
+            Send
+          </button>
         </div>
-         {/* Send Button */}
-         <div className="w-[200]" >
-         <button
-          type="submit"
-          className="w-full  bg-black hover:bg-blue-600 text-wtite font-bold py-2 px-4 rounded focus:outline-none"
-        >
-          Send Message
-        </button>
-         </div>
       </form>
     </div>
   );
