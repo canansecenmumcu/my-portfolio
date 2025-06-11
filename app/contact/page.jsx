@@ -24,15 +24,15 @@ const ContactPage = () => {
       {/* Left side */}
       <div className="flex flex-col ">
         {/* Text container */}
-        <div className="flex flex-col ">
-          <h1 className="text-8xl mb-20 font-extrabold tracking-wide   ">contact.</h1>
+        <div className="flex flex-col  ">
+          <h1 className="pt-10 text-5xl lg:text-8xl mb-20 font-extrabold tracking-wide   ">contact.</h1>
           <p className={`${inter.className} text-xl mb-10 `}>
             Get in touch with me via social media or send me an email.
           </p>
         </div>
 
         {/* Social Media Icons */}
-        <div className="flex space-x-5   ">
+        <div className="flex space-x-5 pb-10  ">
           {/* GitHub */}
           <Link href="https://github.com">
             <FontAwesomeIcon icon={faGithub} width={30} height={30} />

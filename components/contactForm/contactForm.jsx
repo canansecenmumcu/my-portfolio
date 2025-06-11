@@ -42,7 +42,7 @@ const ContactForm = () => {
 
   return (
     <div
-      className={`${inter.className} max-w-lg mx-auto p-24 bg-red-50 shadow-md rounded-2xl `}
+      className={`${inter.className}  p-10 md:p-20 bg-red-50 shadow-md rounded-2xl `}
     >
       {status && <p className=" text-green-600 mb-4">{status}</p>}
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -56,7 +56,7 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            rows={4}
+            rows={3}
             className="w-full text-black bg-transparent border-b-2 border-b-gray-400 outline-none resize-none "
           />
         </div>
